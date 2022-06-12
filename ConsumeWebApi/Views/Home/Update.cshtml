@@ -1,0 +1,28 @@
+﻿@model ProductResponseModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+
+<form asp-action="Update" asp-controller="Home" method="post">
+    <input type="hidden" asp-for="@Model.Id"/>
+    <label>Ürün Adı: </label>
+    <input type="text" asp-for="@Model.Name" class="form-control"/>
+    <br />
+
+    <label>Ürün Fiyatı: </label>
+    <input asp-for="@Model.Price" class="form-control"/>
+    <br />
+
+    <label>Ürün Stok: </label>
+    <input asp-for="@Model.Stock" class="form-control"/>
+    <br />
+
+    <div>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Home">Geri Dön</a>
+        <button type="submit" class="btn btn-success">Ekle</button>
+    </div>
+
+</form>

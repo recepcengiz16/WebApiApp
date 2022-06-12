@@ -1,0 +1,28 @@
+﻿@model List<ProductResponseModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<p>
+    <a asp-action="Create" asp-controller="Home" class="btn btn-success">Yeni Ürün Ekle</a>
+</p>
+
+<table>
+    <tr>
+        <th>Ürünün Adı</th>
+        <th>Ürünün Fiyatı</th>
+        <th>Stok</th>
+        <th>İşlem</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.Stock</td>
+            <td><a asp-action="Update" asp-controller="Home" class="btn btn-warning" asp-route-id="@product.Id">Güncelle</a></td>
+            <td><a asp-action="Remove" asp-controller="Home" class="btn btn-danger" asp-route-id="@product.Id">Sil</a></td>
+        </tr>
+    }
+</table>
+

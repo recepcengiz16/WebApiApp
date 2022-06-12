@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Upload";
+}
+
+<h1>Dosya Ekle</h1>
+
+
+<form asp-action="Update" asp-controller="Home" method="post" enctype="multipart/form-data">
+    <label>Dosya Seçiniz: </label>
+    <input type="file" name="file" class="form-control"/>
+    <br />
+
+    <div>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Home">Geri Dön</a>
+        <button type="submit" class="btn btn-success">Ekle</button>
+    </div>
+
+</form>

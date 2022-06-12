@@ -1,0 +1,35 @@
+﻿@model ProductResponseModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+@{
+    if (TempData["errorMessage"] != null)
+    {
+        <p style="color:red"> @TempData["errorMessage"]?.ToString() </p>
+    }
+}
+
+
+<h1>Create</h1>
+
+<form asp-action="Create" asp-controller="Home" method="post">
+    <label>Ürün Adı: </label>
+    <input type="text" asp-for="@Model.Name" class="form-control"/>
+    <br />
+
+    <label>Ürün Fiyatı: </label>
+    <input asp-for="@Model.Price" class="form-control"/>
+    <br />
+
+    <label>Ürün Stok: </label>
+    <input asp-for="@Model.Stock" class="form-control"/>
+    <br />
+
+    <div>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Home">Geri Dön</a>
+        <button type="submit" class="btn btn-success">Ekle</button>
+    </div>
+
+</form>
+
